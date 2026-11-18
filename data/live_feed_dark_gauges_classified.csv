@@ -1,0 +1,37 @@
+site,event,live_class,live_n_in_gap,live_coverage,live_max_in_gap_ft,live_range_in_gap_ft,longest_flat_h,crest_minus_live_max_ft,note
+08104590,texas,NO_LIVE_DATA,,,,,,,IEM returned no results for NFBT2
+08104866,texas,NO_LIVE_DATA,,,,,,,IEM returned no results for LHGT2
+0216239615,helene,NO_LIVE_DATA,,,,,,,no NWS ID in HADS list
+08165500,texas,SILENT,1,0,37.52,0,0,0,only value inside gap is the inserted 37.52 crest (Hunt)
+02162290,helene,SILENT,13,0.06,41.55,41.55,0.3,-30.57,6% coverage; the few values include an impossible 41.55
+0344632850,helene,SILENT,6,0.02,24.25,0,1.3,4.13,2% coverage
+0344878100,helene,SILENT,0,0,,,0,,no live values in gap
+03453000,helene,SILENT,16,0.05,21.74,2.87,0.4,6.46,5% coverage
+03466208,helene,SILENT,0,0,,,0,,no live values in gap
+03479000,helene,SILENT,0,0,,,0,,no live values in gap
+03277300,kentucky,SILENT,0,0,,,0,,no live values in gap
+03281000,kentucky,SILENT,0,0,,,0,,no live values in gap (1.25 h gap)
+03281500,kentucky,SILENT,1,0.25,29.8,0,0,4.35,1 value in 1-h gap
+08074500,harvey,SILENT,11,0.02,41.31,28.51,0.8,3,2% coverage
+08074598,harvey,SILENT,0,0,,,0,,no live values in gap
+03451000,helene,FROZEN,16,0.94,26.1,0.21,3,1.23,stuck within 0.21 ft for 3 h below crest
+03455500,helene,FROZEN,908,1,10.54,10.45,74.5,0.76,flat for 74.5 h
+03456991,helene,FROZEN,26,0.96,25.89,0.12,2.1,1.07,stuck within 0.12 ft
+04290500,vermont,FROZEN,50,0.98,22.56,0,12.3,0.72,constant 22.56 for 12.3 h
+08068800,harvey,FROZEN,103,0.12,128.06,128.07,19.7,1.91,repeats ~128.04-128.06 for 19.7 h while crest reached 129.97 (range inflated by one bad value)
+08070200,harvey,FROZEN,64,0.65,80.05,0.21,4.9,1.1,stuck within 0.21 ft
+08075763,harvey,FROZEN,162,1.23,43.62,0.02,25.8,0.7,constant for 25.8 h
+08076700,harvey,FROZEN,137,0.14,39.36,30.53,48.9,5.49,flat 48.9 h; crest 5.5 ft higher
+08166250,texas,UNDER_READ,323,1,30.51,29.68,8.3,9.1,reported ~21 ft near the 39.61 ft crest; then 2-3 ft for 3 days that USGS later deleted (Center Point)
+08074000,harvey,UNDER_READ,164,1.31,38.79,11.13,0.2,3.11,peaked 3.1 ft below surveyed crest
+02138500,helene,IMPLAUSIBLE,298,0.98,64.13,63.02,1.3,-51.02,values to 64 ft at a gauge whose crest was 13.11 ft
+03443000,helene,IMPLAUSIBLE,3,0.01,-631.96,44.16,0,660.39,negative values; also almost silent
+08066500,harvey,IMPLAUSIBLE,6,1.4,54.29,21.47,0,-11.76,values 11.8 ft above crest
+08072050,harvey,IMPLAUSIBLE,23,0.16,28,693.77,5.1,0.72,range of 694 ft = error codes
+08072600,harvey,IMPLAUSIBLE,399,1.32,1310.71,1222.2,68.5,-1227.03,1310.71 = sensor error code
+08074810,harvey,IMPLAUSIBLE,128,0.93,1310.71,1251.92,18,-1250.71,1310.71 = sensor error code
+08150700,texas,LIVE_PRESENT,879,1,29.91,25.8,3.3,-3.27,"live values reached 29.91 ft, 3.3 ft ABOVE the archived max; archive gap is a later deletion"
+02149000,helene,LIVE_PRESENT,8,0.89,24.78,0.08,1.8,0.89,2.25 h archive gap; live readings present
+02162287,helene,LIVE_PRESENT,51,0.98,7.49,5.48,0.8,0.82,live readings present
+021623950,helene,LIVE_PRESENT,27,0.96,9.33,4.68,0.5,-0.32,live readings present
+08069500,harvey,LIVE_PRESENT,103,1.27,69.22,1.97,8.8,0.38,live readings present; 0.4 ft below crest

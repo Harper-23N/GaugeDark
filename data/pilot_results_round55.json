@@ -1,0 +1,272 @@
+{
+ "run_by": "Claude (AI) on 16-17 Nov 2026 through the user's desktop-app browser; re-run everything yourself before using any number | P8-P10 added 17 Nov 2026 (Round 57)",
+ "P1_archive_census": {
+  "source": "USGS NWIS IV gage height (00065), bounding-box queries identical to Round 54, pulled 16 Nov 2026",
+  "gauges": 387,
+  "rule": "gd_gaps.py (inserted-crest aware, v3)",
+  "by_rise_bin": {
+   "<5ft": [
+    103,
+    1,
+    1
+   ],
+   "5-10ft": [
+    58,
+    3,
+    3
+   ],
+   "10-20ft": [
+    110,
+    4,
+    4
+   ],
+   "20ft+": [
+    116,
+    28,
+    23
+   ]
+  },
+  "format": "[gauges, dark >=1 h, dark >=3 h]",
+  "by_event_20ft_plus": {
+   "texas": [
+    17,
+    5
+   ],
+   "helene": [
+    25,
+    8
+   ],
+   "kentucky": [
+    12,
+    3
+   ],
+   "vermont": [
+    1,
+    1
+   ],
+   "harvey": [
+    59,
+    11
+   ],
+   "waverly": [
+    2,
+    0
+   ],
+   "yellowstone": [
+    0,
+    0
+   ]
+  },
+  "same_data_round54_rule": {
+   "20ft+": [
+    116,
+    32
+   ],
+   "<5ft": [
+    103,
+    1
+   ],
+   "note": "Round 54 itself reported 36/114 and 2/110; differences come from rule details and data revisions"
+  },
+  "dark_gauges_total": 36,
+  "gap_contains_crest": 32
+ },
+ "P2_inserted_crests": {
+  "gauges_with_inserted_looking_values": 60,
+  "flagged_DAYUNKNOWN_in_new_API": 2,
+  "flagged_FLOOD": 2,
+  "flagged_REVISED": 1,
+  "lesson": "official qualifiers mark only a few inserted crests; detect them structurally"
+ },
+ "P3_live_feed_vs_archive": {
+  "source": "Iowa Environmental Mesonet DCP/HADS archive (NWS SHEF relay), 359 of 387 gauges mapped to NWS IDs",
+  "dark_in_archive": 36,
+  "no_live_data": 3,
+  "classes_of_33": {
+   "SILENT": 12,
+   "FROZEN": 8,
+   "UNDER_READ": 2,
+   "IMPLAUSIBLE": 6,
+   "LIVE_PRESENT": 5
+  },
+  "live_only_outages_archive_healthy": 7,
+  "caveat": "IEM stores values by observation time, not receipt time; it also holds some later inserts (e.g. Hunt 37.52); classes from automatic rules plus my reading of 36 records; hand-verify every one"
+ },
+ "P4_silence_alarm_replay": {
+  "gaps": 157,
+  "dangerous": 28,
+  "X_0.5ft": {
+   "hits": 19,
+   "misses": 9,
+   "false_alarms": 10,
+   "precision": 0.655,
+   "recall": 0.679
+  },
+  "X_1ft": {
+   "hits": 16,
+   "misses": 12,
+   "false_alarms": 6,
+   "precision": 0.727,
+   "recall": 0.571
+  },
+  "X_2ft": {
+   "hits": 7,
+   "misses": 21,
+   "false_alarms": 1,
+   "precision": 0.875,
+   "recall": 0.25
+  },
+  "baseline_every_gap": {
+   "hits": 28,
+   "false_alarms": 129,
+   "precision": 0.178
+  },
+  "caveat": "in-sample: thresholds and truth labels from the same 7 floods; archive gaps, not live gaps"
+ },
+ "P5_virtual_gauge_blankout": {
+  "pairs_usable": 6,
+  "rows": [
+   {
+    "pair": "Kerrville->Comfort (TX)",
+    "lag_h": 3.5,
+    "rise_ft": 31.73,
+    "rmse": {
+     "persist": 25.25,
+     "transfer": 4.03,
+     "oracle_interp": 7.04
+    },
+    "crest_err": {
+     "persist": -31.73,
+     "transfer": -9.19
+    }
+   },
+   {
+    "pair": "Comfort->Bergheim (TX)",
+    "lag_h": 5.75,
+    "rise_ft": 44.85,
+    "rmse": {
+     "persist": 34.4,
+     "transfer": 11.2,
+     "oracle_interp": 9.34
+    },
+    "crest_err": {
+     "persist": -44.85,
+     "transfer": -19.92
+    }
+   },
+   {
+    "pair": "Bergheim->Spring Branch (TX)",
+    "lag_h": 7.5,
+    "rise_ft": 28.32,
+    "rmse": {
+     "persist": 22.13,
+     "transfer": 15.37,
+     "oracle_interp": 6.71
+    },
+    "crest_err": {
+     "persist": -28.32,
+     "transfer": 13.9
+    }
+   },
+   {
+    "pair": "Fletcher->Asheville (NC)",
+    "lag_h": 0,
+    "rise_ft": 12.42,
+    "rmse": {
+     "persist": 6.45,
+     "transfer": 0.49,
+     "oracle_interp": 1.7
+    },
+    "crest_err": {
+     "persist": -12.42,
+     "transfer": -0.91
+    }
+   },
+   {
+    "pair": "Asheville->Marshall (NC)",
+    "lag_h": 2,
+    "rise_ft": 1.97,
+    "rmse": {
+     "persist": 1.36,
+     "transfer": 0.43,
+     "oracle_interp": 0.24
+    },
+    "crest_err": {
+     "persist": -1.97,
+     "transfer": 0.1
+    }
+   },
+   {
+    "pair": "Marshall->Hot Springs (NC)",
+    "lag_h": 3.25,
+    "rise_ft": 13.33,
+    "rmse": {
+     "persist": 6.3,
+     "transfer": 3.18,
+     "oracle_interp": 2.4
+    },
+    "crest_err": {
+     "persist": -13.33,
+     "transfer": -5.91
+    }
+   }
+  ],
+  "excluded": "Hazard->Jackson (KY) and Addicks->W Belt (Harvey): window finder found no clean rising limb",
+  "caveat": "lag chosen using the same event (leak); naive transfer, no fitted relation"
+ },
+ "P6_tide_control_spotcheck": {
+  "station": "NOAA 8725110 Naples FL, Hurricane Ian",
+  "last_value": "9.052 ft MLLW at 2022-09-28 17:06Z",
+  "next_value": "none through 2022-10-01",
+  "confirms_round54": true
+ },
+ "P7_hunt_and_center_point": {
+  "hunt_08165500": {
+   "last_reading": "29.45 ft at 09:35Z (4:35 am CDT) 4 Jul 2025",
+   "inserted_crest": "37.52 ft stamped 10:10Z, qualifier DAYUNKNOWN",
+   "silent_h": 35.0,
+   "deficit_ft": 8.07
+  },
+  "center_point_08166250": {
+   "archive_last_reading": "6.16 ft at 11:15Z",
+   "archive_gap_h": 81,
+   "inserted_crest": "39.61 ft at 12:30Z",
+   "live_feed": "kept sending: 14.25 (11:30Z), 20.74 (12:00Z), ~21 ft near the crest, then 2-3 ft for 3 days, all later deleted by USGS; when the archive resumes (7.45 ft at 20:15Z 7 Jul) the two records agree",
+   "round54_said": "nothing for 75 minutes (incorrect)"
+  },
+  "kerrville_08166200": {
+   "crest": "34.29 ft at 11:30Z",
+   "complete_record": true,
+   "status": "still provisional (P) in archive"
+  }
+ },
+ "P8_equipment_limits_and_flood_stage": {
+  "source": "USGS Water Data OGC API time-series-metadata thresholds, pulled 17 Nov 2026 (data/gauge_thresholds_usgs.csv)",
+  "big_rise_gauges_with_op_max": "105 of 116",
+  "dark_if_crest_at_or_above_op_max": "7 of 13 (54%, Wilson 29-77%)",
+  "dark_if_crest_below_op_max": "20 of 92 (22%, Wilson 15-31%)",
+  "fisher_unclustered": "odds ratio 4.2, p = 0.036 (not clustered by flood)",
+  "dark_gauges_whose_last_reading_was_at_or_above_op_max": 4,
+  "dark_gauges_at_or_above_NWS_flood_stage_when_they_failed": "11 of 14 with a published flood stage (79%, Wilson 52-92%)",
+  "caveat": "Thresholds are current values; some may have been set after the flood. In-sample, 7 hand-picked floods.",
+  "dark_gauges_whose_last_reading_was_below_op_max": "23 of 27 (85%); e.g. Hunt last reading 29.45 ft vs op max 60 ft",
+  "dark_gauges_whose_crest_never_reached_op_max": "20 of 27 (74%)",
+  "gauges_with_op_max": "115 of 133 pilot gauges in data/gauge_thresholds_usgs.csv"
+ },
+ "P9_live_feed_detector": {
+  "source": "Iowa State HADS live-feed copy, 125 big-rise or labelled gauges in the 7 pilot floods (121 with live data), pulled 17 Nov 2026; data/live_detector_pilot.csv; rules in code/gd_live_rules.py",
+  "silence_rule": "gap of at least max(3 x usual interval, 60 min) right after a 0.5 ft rise in the previous hour; the alarm fires when the gap reaches that length. Caught 9 of 12 SILENT gauges and 5 of 7 live-only outages; fired at 1 of 81 other archive-healthy gauges. With a 15-min floor instead of 60: 10 of 12, 6 of 7, still 1 of 81.",
+  "implausible_rule": "caught 6 of 6 IMPLAUSIBLE gauges; scoring uses the archive crest only after the fact",
+  "impossible_values_beyond_the_dark_set": "20 of 121 gauges sent at least one impossible value (negative, above the true crest, error code 1310.71, or a drop to 0 that reverts); 12 of them have a clean archive, so the error was removed later and is invisible to archive studies. 15 of the 20 are Harvey (2017).",
+  "op_max_false_alarms": "7 gauges where the real crest rose above the published operational maximum (e.g. 03466500: crest 66.03 ft, limit 60 ft), so op max alone is not a safe ceiling",
+  "frozen_rule": "flat within 0.1 ft for 2 h, 3 ft above pre-event level, after a 1 ft rise: caught 4 of 8 FROZEN but fired at 24 of 81 archive-healthy gauges (broad natural crests are also flat). A single-gauge frozen rule is not usable; needs a neighbour check.",
+  "under_read": "0 of 2 caught by single-gauge rules; needs the neighbour rule",
+  "caveat": "In-sample: rules designed after seeing these floods. Labels are mine (P3), not yet hand-checked by the student.",
+  "hunt_timing": "Hunt sent readings every 5 min until 29.45 ft at 09:35 UTC (4:35 am CDT). The Iowa State copy also holds the later-inserted crest 37.52 ft at 10:10 UTC, which was ignored. With the 60-min floor the real-time alarm fires at 10:35 UTC, after the USGS-estimated crest time; with a 15-min floor it fires at 09:50 UTC (4:50 am CDT), 20 min before it. The floor matters for flash floods."
+ },
+ "P10_feasibility_checks": {
+  "hunt_backup_sensor": "None. Hunt (08165500) time-series-metadata lists only the gage-height series plus annual peaks and daily means; no second stage sensor to fall back on.",
+  "stn_api": "stn.wim.usgs.gov/STNServices/Events.json returned Access forbidden (403) from a browser on 17 Nov 2026; use the STN Data Portal or pygeohydro STNFloodEventData for the pre-registered flood list.",
+  "bbox_new_api": "bbox works on continuous and monitoring-locations collections (checked 17 Nov 2026)."
+ }
+}

@@ -1,0 +1,8 @@
+site,nwsli,event,live_gap_h,live_gap_start_utc,live_last_stage_ft,live_deficit_ft,usgs_archive_dark,comment
+02153200,BBGS1,helene,9.25,2024-09-26 23:30,10.01,16.22,0,Broad River nr Blacksburg SC: silent 9.25 h in the live feed 16 ft below its later crest; archive was filled in later
+06188000,TFLW4,yellowstone,14.25,2022-06-15 18:15,6.89,9.9,0,Lamar River nr Tower Ranger Station (Yellowstone 2022): silent 14 h live; archive complete
+03280000,JKNK2,kentucky,1.25,2022-07-28 18:00,38.29,5.18,0,North Fork Kentucky River at Jackson: 1.25 h live gap 5 ft below crest
+08153500,JOCT2,texas,1,2025-07-05 05:00,12.45,1.31,0,Pedernales River nr Johnson City: 1 h live gap
+08158927,KBWT2,texas,3.83,2025-07-05 17:55,0.53,0.67,0,small creek; 3.8 h live gap at low stage
+08074710,HPOT2,harvey,1.03,2017-08-28 04:37,10.26,1.8,0,Buffalo Bayou at Turning Basin: 1 h live gap
+08075605,BNPT2,harvey,1,2017-08-29 01:46,23.53,7.41,0,Berry Bayou: 1 h live gap 7.4 ft below crest
