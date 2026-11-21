@@ -4,7 +4,7 @@ Input: a list of (time_utc_ms, value_ft, qualifier_string) for ONE gauge and ONE
 Output: a dict describing the gauge's flood rise and every "dark" gap.
 
 Rule (fixed before looking at results; change it only with a logbook entry):
-  1. Keep numeric values; drop values whose USGS code contains 'e' (estimated).
+  1. Keep numeric values; drop values marked estimated ("ESTIMATED" in the new API, "e" in old codes).  
   2. Median reporting interval = median spacing of the remaining readings.
   3. "Inserted" point = a reading that (a) is cut off from BOTH neighbours by >= max(3*median, 45 min), or
      (b) is followed by a gap >= that threshold, arrives off-schedule (>= 1.5*median after the previous reading)
@@ -20,6 +20,16 @@ from dataclasses import dataclass, field
 from statistics import median
 
 MIN = 60_000
+
+# "ESTIMATED" confirmed 21 Nov 2026: new API writes "Approved|ESTIMATED"
+# (seen on discharge at 5 ice-affected gauges, Jan 2024). "e" = old USGS style.
+ESTIMATED_TOKENS = {"e", "ESTIMATED"}
+
+
+def is_estimated(code):
+    """True only if one whole piece of the code means 'estimated'."""
+    pieces = (code or "").replace("+", "|").replace(" ", "|").split("|")
+    return any(p.strip() in ESTIMATED_TOKENS for p in pieces)
 
 
 @dataclass
@@ -59,7 +69,7 @@ class GaugeResult:
 def regular_series(recs):
     """Return (regular readings, inserted readings, median interval) from (t, v, code) tuples."""
     num = [(t, v, c or "") for t, v, c in recs if v is not None]
-    tel = [r for r in num if "e" not in r[2]]
+    tel = [r for r in num if not is_estimated(r[2])]    
     tel.sort()
     if len(tel) < 3:
         return tel, [], 15.0
